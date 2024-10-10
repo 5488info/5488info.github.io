@@ -978,7 +978,6 @@ a {
   position: relative;
   padding: 0.5rem 0.6rem;
   flex-wrap: nowrap;
-  background: rgba(255, 255, 255, 0.8) !important;
   left: 0;
   right: 0;
   -webkit-box-pack: justify;
@@ -1021,7 +1020,6 @@ a {
   transition: .3s all !important;
   min-width: auto;
   background: #ffffff;
-  background: rgba(255, 255, 255, 0.8) !important;
   border-radius: 4px !important;
 }
 .cid-uqQbLZpKqB .nav-item:focus,
@@ -1085,7 +1083,7 @@ a {
 }
 @media (min-width: 992px) {
   .cid-uqQbLZpKqB .navbar.collapsed.opened:not(.navbar-short) .navbar-collapse {
-    max-height: calc(98.5vh - 4rem);
+    max-height: calc(98.5vh - 3.3rem);
   }
 }
 .cid-uqQbLZpKqB .navbar.collapsed .dropdown-menu .dropdown-submenu {
@@ -1348,9 +1346,6 @@ a {
     padding: 1rem;
     border-radius: 1.5rem;
     background: #ffffff;
-    opacity: 1;
-    border-color: rgba(255, 255, 255, 0.8) !important;
-    background: rgba(255, 255, 255, 0.8) !important;
     backdrop-filter: blur(8px);
     border-radius: 4px !important;
   }
@@ -1414,4 +1409,58 @@ a {
   .cid-uqQbLZpKqB .navbar-collapse {
     padding: 1rem;
   }
+}
+.cid-uqQmtx7gXr {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .cid-uqQmtx7gXr {
+    align-items: center;
+  }
+  .cid-uqQmtx7gXr .row {
+    justify-content: center;
+  }
+  .cid-uqQmtx7gXr .content-wrap {
+    padding: 1rem 3rem;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .cid-uqQmtx7gXr .content-wrap {
+    min-width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .cid-uqQmtx7gXr {
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .cid-uqQmtx7gXr .mbr-row {
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  .cid-uqQmtx7gXr .content-wrap {
+    width: 100%;
+  }
+}
+.cid-uqQmtx7gXr .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-uqQmtx7gXr .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-image: url("../../../assets/images/background1.jpg");
+}
+.cid-uqQmtx7gXr .mbr-section-title,
+.cid-uqQmtx7gXr .mbr-section-subtitle {
+  text-align: left;
+  color: #ffc091;
+}
+.cid-uqQmtx7gXr .mbr-text,
+.cid-uqQmtx7gXr .mbr-section-btn {
+  text-align: left;
 }
