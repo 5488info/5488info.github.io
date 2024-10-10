@@ -1130,7 +1130,7 @@ a {
   width: 30px;
   height: 2px;
   border-right: 5px;
-  background-color: #005bbb;
+  background-color: #ff8cbc;
 }
 .cid-tHeG7yune1 button.navbar-toggler .hamburger span:nth-child(1) {
   top: 0;
@@ -1326,6 +1326,8 @@ a {
 }
 .cid-uqPN8I69yw {
   display: flex;
+  padding-top: 24rem;
+  padding-bottom: 7rem;
 }
 @media (min-width: 768px) {
   .cid-uqPN8I69yw {
