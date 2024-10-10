@@ -81,7 +81,7 @@
         "file": "@PROJECT_PATH@/fonts/665db3194fce00e667a51df0_UAFSans-Medium/font.ttf"
       }
     ],
-    "favicon": false,
+    "favicon": "@PROJECT_PATH@/assets/images/favicon.ico",
     "mbrsiteDomain": "sijbvai0my",
     "imageResize": false,
     "usedWebp": false,
@@ -99,8 +99,8 @@
     "index.html": {
       "settings": {
         "main": true,
-        "title": "Home",
-        "meta_descr": "",
+        "title": "#5488NOW",
+        "meta_descr": "Підтримайте законопроєкт, покликаний захистити десятки тисяч україн_ок від проявів дискримінації та ненависті. Дізнайтеся більше ######### ГО \"АЛЬЯНС.ГЛОБАЛ\"",
         "header_custom": "",
         "footer_custom": "",
         "html_before": ""
