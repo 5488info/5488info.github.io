@@ -95,7 +95,7 @@
     "uniqCompNum": 83,
     "versionPublish": "5.9.18",
     "screenshot": "screenshot.png",
-    "publishChangesOnly": true,
+    "publishChangesOnly": false,
     "publishEditFolder": false
   },
   "pages": {
