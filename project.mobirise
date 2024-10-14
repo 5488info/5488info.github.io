@@ -92,7 +92,7 @@
     "siteUrl": false,
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 31,
+    "uniqCompNum": 32,
     "versionPublish": "5.9.18",
     "screenshot": "screenshot.png",
     "publishChangesOnly": true,
@@ -1386,11 +1386,11 @@
           "_sourceTheme": "replym5",
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"video01 replym5\" group=\"Image & Video\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"color\" title=\"Subtitle BG\" value=\"#ffd500\" name=\"subtitleBg\" condition=\"showSubtitle\" selected>\n        <input type=\"color\" title=\"Shadow Color\" value=\"#000000\" name=\"shadow\" condition=\"showSubtitle\" selected>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Decoration\" name=\"showDecor\">\n        <input type=\"color\" title=\"Decoration Color\" value=\"#005bbb\" name=\"decor\" condition=\"showDecor\" selected>\n        <header>Video</header>\n        <input type=\"text\" title=\"Link\" name=\"modalVideo\" value=\"https://youtu.be/by8uLyMCAt8\">\n        <input type=\"color\" title=\"Play Color\" value=\"#C6F15C\" name=\"play\" selected>\n        <input type=\"color\" title=\"Video BG\" value=\"#000000\" name=\"videoBg\" selected>\n        <input type=\"color\" title=\"Shadow Color\" value=\"#454545\" name=\"videoShadow\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/replym5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f0ede5\" selected>\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/replym5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\" mbr-class=\"{'flex-row-reverse' : reverseContent}\">\n            <div class=\"col-12 col-lg-7\">\n                <div class=\"title-wrapper\">\n                    <div class=\"subtitle-wrapper\">\n                        <h3 class=\"mbr-section-subtitle mbr-fonts-style\" data-app-selector=\".mbr-section-subtitle, .subtitle-wrapper\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\">\n                            #5488NOW!</h3>\n                    </div>\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"><b>уявіть собі Україну...</b></h2>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-7\">\n                <div class=\"text-wrapper\">\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">... де кожна людина може почуватися в безпеці, незалежно від того, ким вона є. <br><br>Саме до цього прагне законопроєкт №5488. Він пропонує внести зміни до кримінального та адміністративного кодексів, щоб ефективніше боротися з дискримінацією та злочинами ненависті.<br><br> Цей законопроєкт – не просто юридичний документ, а потенційний рятівний круг для тисяч українців, які стикаються з упередженням та насильством через свою ідентичність.\n                    </p>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                        <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            <span class=\"mobi-mbri mobi-mbri-sun2 mbr-iconfont mbr-iconfont-btn\"></span>\n                            Get started\n                        </a>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-5\">\n                <div class=\"box\">\n                    <div class=\"mbr-media show-modal align-center\" data-modal=\".modalWindow\">\n                        <div class=\"icon-wrap\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-play mobi-mbri\"></span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"decor-wrap\" mbr-if=\"showDecor\"></div>\n    <div>\n        <div class=\"modalWindow\" style=\"display: none\">\n            <div class=\"modalWindow-container\">\n                <div class=\"modalWindow-video-container\">\n                    <div class=\"modalWindow-video\">\n                        <iframe width=\"100%\" height=\"100%\" data-src=\"{{modalVideo}}\" frameborder=\"0\" allowfullscreen=\"1\"></iframe>\n                    </div>\n                    <a class=\"close\" role=\"button\" data-dismiss=\"modal\" data-bs-dismiss=\"modal\">\n                        <span aria-hidden=\"true\" class=\"mbr-iconfont mobi-mbri-close mobi-mbri closeModal\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden\">Close</span>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "urbxk7bnh3",
+          "_anchor": "video01-m",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "video01-m"
+          "_params": {}
         },
         {
           "alias": false,
@@ -1515,16 +1515,16 @@
           "_sourceTheme": "merchm5",
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"article01 merchm5\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"color\" title=\"Title Decoration\" value=\"#ff8cbc\" name=\"decor\" condition=\"showTitle\">\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Image 1\" name=\"showImage_1\" checked>\n        <input type=\"checkbox\" title=\"Image 2\" name=\"showImage_2\" checked>\n        <input type=\"color\" title=\"Image Border\" value=\"#1D1D1F\" name=\"border\" condition=\"showImage_1 || showImage_2\">\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/merchm5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f0ede5\" selected>\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/merchm5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\" mbr-class=\"{'flex-row-reverse' : reverseContent}\">\n            <div class=\"col-12 col-lg-5\">\n                <div class=\"content-wrapper\">\n                    <div class=\"title-wrapper\">\n                        <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .mbr-section-btn, .title-wrapper\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\">Ключова новація:</h2>\n                    </div>\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">... введення поняття \"нетерпимість\" у правове поле.<br><br> Це дозволить притягувати до відповідальності за дискримінацію за такими ознаками як сексуальна орієнтація, гендерна ідентичність, колір шкіри, етнічне походження та багато інших. <br><br>Закон також посилить покарання за злочини, скоєні з мотивів нетерпимості, та заборонить публічні заклики до насильства. <br><br>Це означає, що люди, які зазнають нападів чи дискримінації через те, ким вони є, нарешті отримають реальний правовий захист.\n                    </p>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\"><a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Введите Текст\">\n                            детальніше про законопроєкт 🔗\n                        </a></div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-7\">\n                <div class=\"image-wrapper\" mbr-if=\"showImage_1\">\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-1.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-7\">\n                <div class=\"image-wrap\" mbr-if=\"showImage_2\">\n                    <img src=\"@PROJECT_PATH@/assets/images/mbr-2.jpg\" alt=\"Mobirise\">\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
           "_cid": "urbDyTcIuW",
+          "_anchor": "article01-p",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
-          "_params": {},
-          "_anchor": "article01-p"
+          "_params": {}
         },
         {
           "_name": "header03",
           "_sourceTheme": "complexm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Link\" name=\"showLink\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/complexm5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffd500\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/complexm5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#fafafa\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-lg-4 col-md-5 d-flex\">\n                <div class=\"link-wrapper\" mbr-if=\"showLink\">\n                    <p class=\"link mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".link, .link-icon\">\n                        <b><a href=\"https://lgbti-consortium.org.ua/media/gromadskist-zaklykaye-vladu-yaknajshvydshe-uhvalyty-zakonoproyekt-5488-pro-nedyskryminatsiyu/\" class=\"text-danger\" target=\"_blank\">деталі</a> 🔗</b></p>\n                    <span mbr-icon class=\"mbr-iconfont link-icon mobi-mbri-right mobi-mbri\"></span>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-8 col-md-7\">\n                <h1 class=\"mbr-section-title align-right mbr-fonts-style pb-5 mb-5\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Україна зобовʼязалася імплементувати законопроєкт №5488 в рамках наших євроінтеграційних зобовʼязань.</b><br><br><b>Простіше кажучи, без його впровадження, нас не візьмуть в ЄС.&nbsp;</b></h1>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"header3\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"15\" step=\"1\" value=\"15\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"15\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Link\" name=\"showLink\" checked>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/complexm5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffd500\" selected>\n            <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/complexm5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#fafafa\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.2\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n    <div class mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-lg-4 col-md-5 d-flex\">\n                <div class=\"link-wrapper\" mbr-if=\"showLink\">\n                    <p class=\"link mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".link, .link-icon\"><b><a href=\"https://lgbti-consortium.org.ua/media/gromadskist-zaklykaye-vladu-yaknajshvydshe-uhvalyty-zakonoproyekt-5488-pro-nedyskryminatsiyu/\" class=\"text-danger\" target=\"_blank\"><i>деталі</i></a></b></p>\n                    <span mbr-icon class=\"mbr-iconfont link-icon mobi-mbri-right mobi-mbri\"></span>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-8 col-md-7\">\n                <h1 class=\"mbr-section-title align-right mbr-fonts-style pb-5 mb-5\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>Україна зобовʼязалася імплементувати законопроєкт №5488 в рамках наших євроінтеграційних зобовʼязань.</b><br><br><b>Простіше кажучи, без його впровадження, нас не візьмуть в ЄС.&nbsp;</b></h1>\n            </div>\n        </div>\n    </div>\n</section>",
           "_styles": {
             "& when not (@fullScreen)": {
               "padding-top": "(@paddingTop * 1rem)",
@@ -1599,11 +1599,172 @@
             }
           },
           "_cid": "urbPAXSQLZ",
+          "_anchor": "header03-u",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            "& when (@fullWidth)": {
+              ".container-fluid": {
+                "padding": "0 50px",
+                "@media (max-width: 992px)": {
+                  "padding": "0 16px"
+                }
+              }
+            },
+            ".container": {
+              "@media (max-width: 992px)": {
+                "padding": "0 16px"
+              }
+            },
+            ".row": {
+              "justify-content": "center"
+            },
+            ".title-wrapper": {
+              ".mbr-section-title": {
+                "display": "inline-flex",
+                "margin-bottom": "42px",
+                "padding": "14px 24px",
+                "border-radius": "8px !important",
+                "box-shadow": "4px 6px 0 0 @shadow",
+                "background-color": "@titleBg",
+                "transform": "rotate(-4deg)",
+                "@media (max-width: 992px)": {
+                  "margin-bottom": "32px"
+                }
+              }
+            },
+            ".panel-group": {
+              ".card": {
+                "position": "relative",
+                "border-radius": "24px !important",
+                "padding": "64px",
+                "margin-top": "32px",
+                "box-shadow": "6px 8px 0 0 @shadowCard",
+                "background-color": "@card",
+                "@media (max-width: 992px)": {
+                  "padding": "24px"
+                },
+                "&:first-child": {
+                  "margin-top": "0"
+                },
+                ".card-header": {
+                  "background-color": "transparent",
+                  "border": "none",
+                  "border-radius": "0",
+                  "padding": "0",
+                  ".panel-title": {
+                    "display": "flex",
+                    "justify-content": "space-between",
+                    "align-items": "center",
+                    "width": "100%",
+                    ".panel-title-edit": {
+                      "margin-bottom": "0"
+                    },
+                    ".icon-wrapper": {
+                      "position": "relative",
+                      "width": "48px",
+                      "height": "48px",
+                      "min-width": "48px",
+                      "display": "inline-flex",
+                      "align-items": "center",
+                      "justify-content": "center",
+                      "margin-left": "16px",
+                      "transition": "all 0.3s ease-in-out",
+                      "&:before": {
+                        "content": "''",
+                        "position": "absolute",
+                        "width": "100%",
+                        "height": "100%",
+                        "background-color": "@icon",
+                        "border-radius": "100%",
+                        "opacity": ".2",
+                        "transition": "all 0.3s ease-in-out"
+                      },
+                      ".mbr-iconfont": {
+                        "position": "relative",
+                        "z-index": "1",
+                        "font-size": "20px",
+                        "transition": "all 0.3s ease-in-out",
+                        "color": "@icon"
+                      }
+                    },
+                    "&:not(.collapsed)": {
+                      ".icon-wrapper": {
+                        "&::before": {
+                          "opacity": ".5"
+                        },
+                        ".mbr-iconfont": {
+                          "transform": "rotate(-45deg)"
+                        }
+                      }
+                    }
+                  }
+                },
+                ".panel-collapse": {
+                  ".panel-body": {
+                    "padding-top": "56px",
+                    "@media (max-width: 992px)": {
+                      "padding-top": "32px"
+                    },
+                    ".panel-text": {
+                      "margin-bottom": "0"
+                    }
+                  }
+                }
+              }
+            },
+            ".mbr-section-title": {
+              "color": "#000000"
+            },
+            ".panel-title-edit": {
+              "color": "#ffffff"
+            },
+            ".panel-text": {
+              "color": "#ffffff"
+            },
+            ".mbr-section-title, .title-wrapper": {
+              "color": "#f0ede5"
+            }
+          },
+          "_name": "list01",
+          "_sourceTheme": "replym5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"list01 replym5\" group=\"List\" plugins=\"mbr-switch-arrow, mobirise-icons2\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"3\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"color\" title=\"Title BG\" value=\"#005bbb\" name=\"titleBg\" condition=\"showTitle\" selected>\n        <input type=\"color\" title=\"Shadow Color\" value=\"#000000\" name=\"shadow\" condition=\"showTitle\" selected>\n        <header>List</header>\n        <select title=\"Amount\" name=\"cardAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\" selected>2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\">4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n        </select>\n        <input type=\"color\" title=\"Icon Color\" value=\"#f0ede5\" name=\"icon\" selected>\n        <input type=\"color\" title=\"Card BG\" value=\"#005bbb\" name=\"card\" selected>\n        <input type=\"color\" title=\"Card Shadow Color\" value=\"#000000\" name=\"shadowCard\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/replym5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#ffd500\" selected>\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/replym5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\">\n            <div class=\"col-12 col-lg-10\">\n                <div class=\"title-wrapper\">\n                    <h3 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title, .title-wrapper\" mbr-theme-style=\"display-4\" mbr-if=\"showTitle\">\n                        <b>ХРОНОЛОГІЯ РОЗГЛЯДУ ЗАКОНОПРОЄКТУ №5488</b>\n                    </h3>\n                </div>\n                <div id=\"bootstrap-accordion\" class=\"panel-group accordionStyles accordion\" role=\"tablist\" aria-multiselectable=\"true\">\n                    <div class=\"card\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingOne\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse1\" aria-expanded=\"false\" aria-controls=\"collapse1\">\n                                <h4 class=\"panel-title-edit mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\">\n                                    <b>111</b></h4>\n                                <div class=\"icon-wrapper\">\n                                    <span class=\"sign mbr-iconfont mobi-mbri-plus mobi-mbri\"></span>\n                                </div>\n                            </a>\n                        </div>\n                        <div id=\"collapse1\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-4\" data-app-selector=\".panel-text\">\n                                    111</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 1\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingTwo\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse2\" aria-expanded=\"false\" aria-controls=\"collapse2\">\n                                <h4 class=\"panel-title-edit mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\">\n                                    <b>222</b></h4>\n                                <div class=\"icon-wrapper\">\n                                    <span class=\"sign mbr-iconfont mobi-mbri-plus mobi-mbri\"></span>\n                                </div>\n                            </a>\n                        </div>\n                        <div id=\"collapse2\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingTwo\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-4\" data-app-selector=\".panel-text\">\n                                    222</p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 2\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingThree\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse3\" aria-expanded=\"false\" aria-controls=\"collapse3\">\n                                <h4 class=\"panel-title-edit mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\">\n                                    <b>How do I measure the effectiveness of online sales promotions?</b>\n                                </h4>\n                                <div class=\"icon-wrapper\">\n                                    <span class=\"sign mbr-iconfont mobi-mbri-plus mobi-mbri\"></span>\n                                </div>\n                            </a>\n                        </div>\n                        <div id=\"collapse3\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingThree\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-4\" data-app-selector=\".panel-text\">\n                                    The effectiveness of online sales promotions can be measured using various key\n                                    performance indicators (KPIs) such as website traffic, conversion rates, average\n                                    order value, sales revenue, customer acquisition cost, and return on investment\n                                    (ROI). Additionally, tracking customer engagement metrics, such as click-through\n                                    rates and social media interactions, can provide insights into the impact of\n                                    promotions on audience engagement.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 3\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingFour\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse4\" aria-expanded=\"false\" aria-controls=\"collapse4\">\n                                <h4 class=\"panel-title-edit mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\">\n                                    <b>How do I plan and execute successful online sales promotions?</b>\n                                </h4>\n                                <div class=\"icon-wrapper\">\n                                    <span class=\"sign mbr-iconfont mobi-mbri-plus mobi-mbri\"></span>\n                                </div>\n                            </a>\n                        </div>\n                        <div id=\"collapse4\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingFour\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-4\" data-app-selector=\".panel-text\">\n                                    Planning and executing successful online sales promotions involve conducting market\n                                    research, identifying target audiences, setting clear objectives, selecting\n                                    appropriate promotion tactics, creating compelling offers, deploying promotions\n                                    across relevant digital channels, monitoring performance metrics in real-time, and\n                                    optimizing campaigns based on data-driven insights.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 4\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingFive\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse5\" aria-expanded=\"false\" aria-controls=\"collapse5\">\n                                <h4 class=\"panel-title-edit mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\">\n                                    <b>What are some best practices for online sales promotions?</b>\n                                </h4>\n                                <div class=\"icon-wrapper\">\n                                    <span class=\"sign mbr-iconfont mobi-mbri-plus mobi-mbri\"></span>\n                                </div>\n                            </a>\n                        </div>\n                        <div id=\"collapse5\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingFive\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-4\" data-app-selector=\".panel-text\">\n                                    Some best practices for online sales promotions include offering genuine discounts\n                                    and valuable incentives, clearly communicating promotion details and terms,\n                                    leveraging targeted marketing tactics to reach relevant audiences, optimizing\n                                    website usability and checkout processes, providing excellent customer support, and\n                                    continuously testing and iterating on promotion strategies to improve results over\n                                    time.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"card\" mbr-if=\"cardAmount > 5\">\n                        <div class=\"card-header\" role=\"tab\" id=\"headingSix\">\n                            <a role=\"button\" class=\"panel-title collapsed\" data-toggle=\"collapse\" data-bs-toggle=\"collapse\" data-core href=\"#collapse6\" aria-expanded=\"false\" aria-controls=\"collapse6\">\n                                <h4 class=\"panel-title-edit mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".panel-title-edit\">\n                                    <b>How can I avoid common pitfalls in online sales promotions?</b>\n                                </h4>\n                                <div class=\"icon-wrapper\">\n                                    <span class=\"sign mbr-iconfont mobi-mbri-plus mobi-mbri\"></span>\n                                </div>\n                            </a>\n                        </div>\n                        <div id=\"collapse6\" class=\"panel-collapse noScroll collapse\" role=\"tabpanel\" aria-labelledby=\"headingSix\" data-parent=\"#accordion\" data-bs-parent=\"#accordion\">\n                            <div class=\"panel-body\">\n                                <p class=\"mbr-fonts-style panel-text\" mbr-theme-style=\"display-4\" data-app-selector=\".panel-text\">\n                                    Common pitfalls to avoid in online sales promotions include over-discounting\n                                    products, misleading or confusing promotion messaging, failing to adequately prepare\n                                    for increased website traffic, neglecting to track and analyze promotion\n                                    performance, and not properly segmenting and targeting promotional offers to\n                                    specific customer segments.\n                                </p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "urc11qM2gK",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {},
-          "_anchor": "header03-u"
+          "_anchor": "list01-v"
         }
       ]
     }
