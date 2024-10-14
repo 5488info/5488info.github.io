@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "page1.html",
+    "currentPage": "whatis5488.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -2628,9 +2628,9 @@
         }
       ]
     },
-    "page1.html": {
+    "whatis5488.html": {
       "settings": {
-        "title": "Що таке 5488?&nbsp;",
+        "title": "Що таке 5488?",
         "meta_descr": "Підтримайте законопроєкт, покликаний захистити десятки тисяч україн_ок від проявів дискримінації та ненависті. Дізнайтеся більше ######### ГО \"АЛЬЯНС.ГЛОБАЛ\"",
         "header_custom": "",
         "footer_custom": "",
