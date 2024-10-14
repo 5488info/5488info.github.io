@@ -92,9 +92,11 @@
     "siteUrl": false,
     "cookiesAlert": false,
     "gdpr": false,
-    "uniqCompNum": 19,
+    "uniqCompNum": 23,
     "versionPublish": "5.9.18",
-    "screenshot": "screenshot.png"
+    "screenshot": "screenshot.png",
+    "publishChangesOnly": true,
+    "publishEditFolder": false
   },
   "pages": {
     "index.html": {
@@ -1051,11 +1053,344 @@
           "_sourceTheme": "startm5",
           "_customHTML": "<section data-bs-version=\"5.1\" class=\"header18\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen, 'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"24\" step=\"1\" value=\"20\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"3\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show / Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\">\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <select title=\"Vertical Align\" name=\"verticalAlign\" condition=\"fullScreen\">\n      <option value=\"flex-start\">Top</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Bottom</option>\n    </select>\n    <select title=\"Horizontal Align\" name=\"horizontalAlign\">\n      <option value=\"flex-start\">Left</option>\n      <option value=\"center\" selected>Center</option>\n      <option value=\"flex-end\">Right</option>\n    </select>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background17.jpg\" parallax>\n      <input type=\"video\" title=\"Video\" value=\"https://youtu.be/6BcMaloXnBg\" selected>\n      <input type=\"color\" title=\"Color\" value=\"#260a30\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type!='color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#000000\" condition=\"bg.type!='color' && overlay\">\n    <input type=\"range\" inline title=\"Overlay Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"bg.type!='color' && overlay\">\n  </mbr-parameters>\n\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row\">\n      <div class=\"content-wrap col-12 col-md-{{contentWidth}}\">\n        <h1 class=\"mbr-section-title mbr-fonts-style mbr-white mb-4\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-title\" mbr-if=\"showTitle\">\n          <b><br>...кількість злочинів продовжує невпинно зростати. Як і число постраждалих від ненависті, зокрема через ознаки сексуальної орієнтації, ґендерної ідентичності тощо.&nbsp;</b></h1>\n        <h2 class=\"mbr-section-subtitle mbr-fonts-style mbr-white mb-4\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-2\" mbr-if=\"showSubtitle\">\n          Header Subtitle\n        </h2>\n        <p class=\"mbr-fonts-style mbr-text mbr-white mb-4\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Full-width block with YouTube video background and flexible\n          configuration, free vertical and horizontal\n          content alignment.&nbsp;</p>\n        <div class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-7\"><a class=\"btn btn-white-outline\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Learn More</a></div>\n      </div>\n    </div>\n  </div>\n</section>",
           "_cid": "uqQmtx7gXr",
+          "_anchor": "header18-i",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            "& when (@reverseContent)": {
+              ".row": {
+                "flex-direction": "row-reverse"
+              }
+            },
+            ".mbr-description": {
+              "text-align": "left"
+            },
+            ".item-wrapper": {
+              "background": "@cardbg",
+              "margin-bottom": "2rem",
+              "padding": "2.25rem",
+              "@media (max-width: 767px)": {
+                "padding": "2rem 1.5rem",
+                "margin-bottom": "1rem"
+              },
+              "@media (min-width: 992px) and (max-width: 1200px)": {
+                "padding": "2rem 1.5rem",
+                "margin-bottom": "2rem"
+              }
+            },
+            ".card-title, .iconfont-wrapper": {
+              "color": "#000000"
+            },
+            ".card-text": {
+              "color": "#000000"
+            },
+            ".mbr-section-title": {
+              "color": "#000000",
+              "text-align": "center"
+            },
+            ".mbr-number": {
+              "color": "#9fe870"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "center"
+            },
+            ".card-text, .item .mbr-section-btn": {
+              "text-align": "left"
+            },
+            ".image-wrapper": {
+              "margin-bottom": "2rem",
+              "@media (max-width: 767px)": {
+                "margin-bottom": "1rem"
+              }
+            }
+          },
+          "_name": "features028",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"features028\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,'mbr-parallax-background': bg.parallax}\">\n\t<mbr-parameters>\n\t\t<header>Size</header>\n\t\t<input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\" checked>\n\t\t<input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n\t\t<input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\t\t<input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\t\t<input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\" checked>\n\t\t<header>Show/Hide</header>\n\t\t<input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Text\" name=\"showText\">\n\t\t<input type=\"range\" name=\"imageWidth\" title=\"Image\" min=\"4\" max=\"8\" step=\"1\" value=\"6\">\n\t\t<header>Card</header>\n\t\t<input type=\"checkbox\" title=\"Card Title\" name=\"showCardTitle\" checked>\n\t\t<input type=\"checkbox\" title=\"Card Subtitle\" name=\"showCardSubtitle\">\n\t\t<input type=\"checkbox\" name=\"showButtons\" title=\"Buttons\">\n\t\t<input type=\"color\" title=\"Card BG\" name=\"cardbg\" value=\"#ffffff\" selected>\n\n\t\t<header>Background</header>\n\t\t<fieldset type=\"background\" name=\"bg\" parallax>\n\t\t\t<input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n\t\t\t<input type=\"color\" title=\"Color\" value=\"#f0ede5\" selected>\n\t\t\t<input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n\t\t</fieldset>\n\t\t<header condition=\"bg.type === 'video'\">Fallback Image</header>\n\t\t<input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n\t\t<input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n\t\t<input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n\t\t<input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n\t</mbr-parameters>\n\n\t<div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n\t<div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\t<div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n\t\t<div class=\"row justify-content-center\" mbr-if=\"showTitle || showText\">\n\t\t\t<div class=\"col-md-12 content-head mb-5\">\n\t\t\t\t<h1 class=\"mbr-section-title mbr-fonts-style  mb-0\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\"><b>5488: Закон, який захистить кожного/у</b></h1>\n\t\t\t\t<p class=\"mbr-text mbr-fonts-style mt-4 mb-0\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">\n\t\t\t\t\tGreat for pro-coders for fast prototyping and small customers' projects.\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</div>\n\n\n\t\t<div class=\"row justify-content-center  blockContent\">\n\n\t\t\t<div class=\"col-12 col-lg\">\n\n\n\t\t\t\t<div class=\"item features-without-image col-12 col-md-12 col-lg-12 active\">\n\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t<div class=\"item-content\">\n\t\t\t\t\t\t\t<h5 class=\"mbr-card-title mbr-fonts-style mt-0 mb-3 mbr-number\" mbr-if=\"showCardTitle\" data-app-selector=\".mbr-number\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\t\t\t<b>01.</b>\n\t\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showCardSubtitle\" data-app-selector=\".card-title\">\n\t\t\t\t\t\t\t\t<b>Form</b>\n\t\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style mt-0 mb-0\" data-app-selector=\".card-text, .item .mbr-section-btn\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t\tВводить поняття \"нетерпимість\" у законодавство.</p>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t\t<a href class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">\n\t\t\t\t\t\t\t\t\tLearn more</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"item features-without-image col-12 col-md-12 col-lg-12\">\n\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t<div class=\"item-content\">\n\t\t\t\t\t\t\t<h5 class=\"mbr-card-title mbr-fonts-style mt-0 mb-3 mbr-number\" mbr-if=\"showCardTitle\" data-app-selector=\".mbr-number\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\t\t\t<b>02.</b>\n\t\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showCardSubtitle\" data-app-selector=\".card-title\">\n\t\t\t\t\t\t\t\t<b>Content</b>\n\t\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style mt-0 mb-0\" data-app-selector=\".card-text, .item .mbr-section-btn\" mbr-theme-style=\"display-7\">Посилює відповідальність за злочини з мотивів нетерпимості.<br></p>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer  mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t    <a href class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">\n\t\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"item features-without-image col-12 col-md-12 col-lg-12\">\n\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t<div class=\"item-content\">\n\t\t\t\t\t\t\t<h5 class=\"mbr-card-title mbr-fonts-style mt-0 mb-3 mbr-number\" mbr-if=\"showCardTitle\" data-app-selector=\".mbr-number\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\t\t\t<b>03.</b>\n\t\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showCardSubtitle\" data-app-selector=\".card-title\">\n\t\t\t\t\t\t\t\t<b>Meaning</b>\n\t\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style mt-0 mb-0\" data-app-selector=\".card-text, .item .mbr-section-btn\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t\tЗахищає від дискримінації за ознаками сексуальної орієнтації, гендерної ідентичності та іншими.</p>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer  mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t\t<a href class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">Learn more</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div><div class=\"item features-without-image col-12 col-md-12 col-lg-12\">\n\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t<div class=\"item-content\">\n\t\t\t\t\t\t\t<h5 class=\"mbr-card-title mbr-fonts-style mt-0 mb-3 mbr-number\" mbr-if=\"showCardTitle\" data-app-selector=\".mbr-number\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\t\t\t<b>04.</b>\n\t\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showCardSubtitle\" data-app-selector=\".card-title\">\n\t\t\t\t\t\t\t\t<b>Meaning</b>\n\t\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style mt-0 mb-0\" data-app-selector=\".card-text, .item .mbr-section-btn\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t\tДає можливість притягнути до адміністративної відповідальності за дискримінацію.</p>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer  mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t\t<a href class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">Learn more</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div><div class=\"item features-without-image col-12 col-md-12 col-lg-12\">\n\t\t\t\t\t<div class=\"item-wrapper\">\n\t\t\t\t\t\t<div class=\"item-content\">\n\t\t\t\t\t\t\t<h5 class=\"mbr-card-title mbr-fonts-style mt-0 mb-3 mbr-number\" mbr-if=\"showCardTitle\" data-app-selector=\".mbr-number\" mbr-theme-style=\"display-1\">\n\t\t\t\t\t\t\t\t<b>05.</b>\n\t\t\t\t\t\t\t</h5>\n\t\t\t\t\t\t\t<h4 class=\"card-title mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showCardSubtitle\" data-app-selector=\".card-title\">\n\t\t\t\t\t\t\t\t<b>Meaning</b>\n\t\t\t\t\t\t\t</h4>\n\t\t\t\t\t\t\t<p class=\"card-text mbr-fonts-style mt-0 mb-0\" data-app-selector=\".card-text, .item .mbr-section-btn\" mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t\tЗабороняє публічні заклики до насильства на ґрунті нетерпимості.</p>\n\t\t\t\t\t\t\t<div class=\"mbr-section-btn item-footer  mt-3\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\" mbr-buttons mbr-theme-style=\"display-7\">\n\t\t\t\t\t\t\t\t<a href class=\"btn item-btn btn-primary\" data-app-placeholder=\"Type Text\">Learn more</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-12 col-lg-{{imageWidth}}\">\n\t\t\t\t<div class=\"image-wrapper\">\n\t\t\t\t\t<img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/mbr.jpg\" alt=\"Mobirise Website Builder\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
+          "_cid": "urbvXptpwT",
+          "_anchor": "features028-k",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "overflow": "hidden",
+            "position": "relative",
+            ".decor-wrap": {
+              "position": "absolute",
+              "top": "-30%",
+              "right": "5%",
+              "border": "60px solid @decor",
+              "border-left": "60px solid transparent",
+              "border-bottom": "60px solid transparent",
+              "width": "50%",
+              "height": "160%",
+              "border-radius": "100%",
+              "transform": "rotate(15deg)",
+              "& when (@reverseContent)": {
+                "right": "auto",
+                "left": "-10%"
+              }
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            "& when (@fullWidth)": {
+              ".container-fluid": {
+                "padding": "0 50px",
+                "@media (max-width: 992px)": {
+                  "padding": "0 16px"
+                }
+              }
+            },
+            ".container": {
+              "@media (max-width: 992px)": {
+                "padding": "0 16px"
+              }
+            },
+            ".row": {
+              "position": "relative",
+              "z-index": "1"
+            },
+            ".title-wrapper": {
+              "margin-bottom": "140px",
+              "@media (max-width: 992px)": {
+                "margin-bottom": "32px"
+              },
+              ".subtitle-wrapper": {
+                ".mbr-section-subtitle": {
+                  "display": "inline-flex",
+                  "margin-bottom": "56px",
+                  "padding": "18px 24px",
+                  "border-radius": "16px !important",
+                  "box-shadow": "6px 8px 0 0 @shadow",
+                  "background-color": "@subtitleBg",
+                  "transform": "rotate(-4deg)",
+                  "@media (max-width: 992px)": {
+                    "margin-bottom": "32px"
+                  }
+                }
+              },
+              ".mbr-section-title": {
+                "margin-bottom": "0"
+              }
+            },
+            ".text-wrapper": {
+              "padding-left": "140px",
+              "@media (max-width: 1440px)": {
+                "padding-left": "64px"
+              },
+              "@media (max-width: 992px)": {
+                "padding-left": "0",
+                "margin-bottom": "32px"
+              },
+              "& when (@reverseContent)": {
+                "padding-left": "0",
+                "padding-right": "140px",
+                "@media (max-width: 1440px)": {
+                  "padding-right": "64px"
+                },
+                "@media (max-width: 992px)": {
+                  "padding-right": "0"
+                }
+              },
+              ".mbr-text": {
+                "margin-bottom": "32px"
+              }
+            },
+            ".box": {
+              "border-radius": "16px !important",
+              "margin-left": "32px",
+              "background-color": "@videoBg",
+              "margin-top": "-12rem",
+              "box-shadow": "2px 2px 10px @videoShadow",
+              "@media (max-width: 992px)": {
+                "margin-left": "0",
+                "margin-top": "0"
+              },
+              "& when (@reverseContent)": {
+                "margin-left": "0",
+                "margin-right": "32px",
+                "@media (max-width: 992px)": {
+                  "margin-right": "0"
+                }
+              },
+              ".mbr-media": {
+                "position": "relative",
+                "overflow": "hidden",
+                "height": "350px",
+                ".mbr-iconfont": {
+                  "font-size": "25px",
+                  "color": "@play",
+                  "transition": "all 0.3s ease-in-out",
+                  "margin-left": "5px",
+                  "z-index": "1"
+                }
+              }
+            },
+            ".mbr-media": {
+              "position": "relative",
+              "img": {
+                "object-fit": "cover",
+                "border-radius": "0 !important"
+              }
+            },
+            "a": {
+              "&:hover": {
+                "background-image": "none !important"
+              }
+            },
+            ".icon-wrap": {
+              "left": "50%",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+              "position": "absolute",
+              "height": "60px",
+              "width": "60px",
+              "border-radius": "100%",
+              "display": "flex",
+              "align-items": "center",
+              "justify-content": "center",
+              "transition": "all 0.3s ease-in-out",
+              "z-index": "1",
+              "cursor": "pointer",
+              "&::before": {
+                "content": "''",
+                "position": "absolute",
+                "width": "100%",
+                "height": "100%",
+                "border-radius": "100%",
+                "background-color": "@play",
+                "opacity": ".2",
+                "transition": "all 0.3s ease-in-out",
+                "pointer-events": "none"
+              },
+              "&:hover, &:focus": {
+                "&::before": {
+                  "opacity": ".5"
+                }
+              }
+            },
+            ".mbr-media span": {
+              "font-size": "5rem",
+              "transition": "all 0.2s"
+            },
+            ".modalWindow": {
+              "position": "fixed",
+              "z-index": "5000",
+              "left": "0",
+              "top": "0",
+              "background-color": "rgba(61, 61, 61, 0.65)",
+              "width": "100%",
+              "height": "100%",
+              ".modalWindow-container": {
+                "display": "table-cell",
+                "vertical-align": "middle"
+              },
+              ".modalWindow-video": {
+                "height": "calc(80vw / 1.778)",
+                "width": "80vw",
+                "margin": "0 auto"
+              }
+            },
+            ".close": {
+              "position": "fixed",
+              "opacity": "0.5",
+              "font-size": "1.5rem",
+              "font-weight": "300",
+              "width": "60px",
+              "height": "60px",
+              "border-radius": "50%",
+              "color": "#fff",
+              "top": "2.5rem",
+              "right": "2.5rem",
+              "border": "2px solid #fff",
+              "text-shadow": "none",
+              "z-index": "5",
+              "transition": "opacity 0.3s ease",
+              "align-items": "center",
+              "justify-content": "center",
+              "display": "flex",
+              "&:hover": {
+                "opacity": "1",
+                "background": "#000",
+                "color": "#fff"
+              }
+            },
+            ".mbr-section-title": {
+              "color": "#000000"
+            },
+            ".mbr-section-subtitle": {
+              "color": "#000000"
+            },
+            ".mbr-text": {
+              "color": "#000000"
+            }
+          },
+          "_name": "video01",
+          "_sourceTheme": "replym5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"video01 replym5\" group=\"Image & Video\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n    <mbr-parameters>\n        <header>Size</header>\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"12\" step=\"1\" value=\"5\" condition=\"fullScreen == false\">\n        <input type=\"checkbox\" title=\"Reverse\" name=\"reverseContent\">\n        <header>Show/Hide</header>\n        <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"color\" title=\"Subtitle BG\" value=\"#ffd500\" name=\"subtitleBg\" condition=\"showSubtitle\" selected>\n        <input type=\"color\" title=\"Shadow Color\" value=\"#000000\" name=\"shadow\" condition=\"showSubtitle\" selected>\n        <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Decoration\" name=\"showDecor\" checked>\n        <input type=\"color\" title=\"Decoration Color\" value=\"#005bbb\" name=\"decor\" condition=\"showDecor\" selected>\n        <header>Video</header>\n        <input type=\"text\" title=\"Link\" name=\"modalVideo\" value=\"https://youtube.com/shorts/dAnwb8dI2m8?si=95piESAlzRfo16uy\">\n        <input type=\"color\" title=\"Play Color\" value=\"#C6F15C\" name=\"play\" selected>\n        <input type=\"color\" title=\"Video BG\" value=\"#000000\" name=\"videoBg\" selected>\n        <input type=\"color\" title=\"Shadow Color\" value=\"#454545\" name=\"videoShadow\" selected>\n        <header>Background</header>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Image\" value=\"@ADDONS_PATH@/replym5/components/_images/background1.jpg\">\n            <input type=\"color\" title=\"Color\" value=\"#f0ede5\" selected>\n        </fieldset>\n        <header condition=\"bg.type === 'video'\">Fallback Image</header>\n        <input type=\"image\" title=\"Fallback Image\" value=\"@ADDONS_PATH@/replym5/components/_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    </mbr-parameters>\n\n    <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" opacity=\"{{overlayOpacity}}\" bg-color=\"{{overlayColor}}\"></div>\n\n    <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n        <div class=\"row\" mbr-class=\"{'flex-row-reverse' : reverseContent}\">\n            <div class=\"col-12 col-lg-7\">\n                <div class=\"title-wrapper\">\n                    <div class=\"subtitle-wrapper\">\n                        <h3 class=\"mbr-section-subtitle mbr-fonts-style\" data-app-selector=\".mbr-section-subtitle, .subtitle-wrapper\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\">\n                            #5488NOW!</h3>\n                    </div>\n                    <h2 class=\"mbr-section-title mbr-fonts-style\" data-app-selector=\".mbr-section-title\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"><b>уявіть собі Україну...</b></h2>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-7\">\n                <div class=\"text-wrapper\">\n                    <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">... де кожна людина може почуватися в безпеці, незалежно від того, ким вона є. Саме до цього прагне законопроєкт №5488. Він пропонує внести зміни до кримінального та адміністративного кодексів, щоб ефективніше боротися з дискримінацією та злочинами ненависті. Цей законопроєкт – не просто юридичний документ, а потенційний рятівний круг для тисяч українців, які стикаються з упередженням та насильством через свою ідентичність.\n                    </p>\n                    <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n                        <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">\n                            <span class=\"mobi-mbri mobi-mbri-sun2 mbr-iconfont mbr-iconfont-btn\"></span>\n                            Get started\n                        </a>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-12 col-lg-5\">\n                <div class=\"box\">\n                    <div class=\"mbr-media show-modal align-center\" data-modal=\".modalWindow\">\n                        <div class=\"icon-wrap\">\n                            <span mbr-icon class=\"mbr-iconfont mobi-mbri-play mobi-mbri\"></span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"decor-wrap\" mbr-if=\"showDecor\"></div>\n    <div>\n        <div class=\"modalWindow\" style=\"display: none\">\n            <div class=\"modalWindow-container\">\n                <div class=\"modalWindow-video-container\">\n                    <div class=\"modalWindow-video\">\n                        <iframe width=\"100%\" height=\"100%\" data-src=\"{{modalVideo}}\" frameborder=\"0\" allowfullscreen=\"1\"></iframe>\n                    </div>\n                    <a class=\"close\" role=\"button\" data-dismiss=\"modal\" data-bs-dismiss=\"modal\">\n                        <span aria-hidden=\"true\" class=\"mbr-iconfont mobi-mbri-close mobi-mbri closeModal\"></span>\n                        <span class=\"sr-only visually-hidden visually-hidden\">Close</span>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "urbxk7bnh3",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
           "_params": {},
-          "_anchor": "header18-i"
+          "_anchor": "video01-m"
         }
       ]
     }
