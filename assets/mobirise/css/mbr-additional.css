@@ -900,7 +900,7 @@ a {
   align-items: center;
   border-radius: 100vw;
   margin-top: 1rem;
-  background-color: #ffffff;
+  background-color: #f0ede5;
   box-shadow: 0 30px 60px 0 rgba(27, 31, 10, 0.08);
   border-radius: 4px !important;
 }
@@ -930,7 +930,7 @@ a {
   border-radius: 1.5rem;
   transition: .3s all !important;
   min-width: auto;
-  background: #ffffff;
+  background: #f0ede5;
   border-radius: 4px !important;
 }
 .cid-uqQbLZpKqB .nav-item:focus,
@@ -1092,7 +1092,7 @@ a {
   padding: 0.667em 1.667em;
 }
 .cid-uqQbLZpKqB .navbar.navbar-expand-lg .dropdown .dropdown-menu {
-  background: #ffffff;
+  background: #f0ede5;
 }
 .cid-uqQbLZpKqB .navbar.navbar-expand-lg .dropdown .dropdown-menu .dropdown-submenu {
   margin: 0;
@@ -1256,7 +1256,7 @@ a {
     width: 100%;
     padding: 1rem;
     border-radius: 1.5rem;
-    background: #ffffff;
+    background: #f0ede5;
     backdrop-filter: blur(8px);
     border-radius: 4px !important;
   }
