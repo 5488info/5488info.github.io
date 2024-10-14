@@ -1846,3 +1846,73 @@ a {
 .cid-urbDyTcIuW .mbr-text {
   color: #1D1D1F;
 }
+.cid-urbPAXSQLZ {
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  background-color: #fffe55;
+}
+.cid-urbPAXSQLZ .mbr-section-title {
+  color: #000000;
+  text-align: left;
+}
+.cid-urbPAXSQLZ .display-1 {
+  font-size: 9rem;
+}
+@media (max-width: 1400px) {
+  .cid-urbPAXSQLZ .display-1 {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 992px) {
+  .cid-urbPAXSQLZ .display-1 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-urbPAXSQLZ .display-1 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .cid-urbPAXSQLZ .d-flex {
+    justify-content: center;
+  }
+}
+.cid-urbPAXSQLZ .link-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+.cid-urbPAXSQLZ .link-wrapper .link-icon {
+  font-size: 6rem;
+  transform: rotate(-45deg) translate(-20px, 30px);
+  padding-left: 1rem;
+  transition: all 0.3s;
+  transform-origin: left;
+}
+@media (max-width: 767px) {
+  .cid-urbPAXSQLZ .link-wrapper {
+    justify-content: center;
+  }
+}
+.cid-urbPAXSQLZ .link-wrapper:hover .link-icon {
+  transform: rotate(-45deg) scale(0.5) translate(-30px, 50px);
+}
+.cid-urbPAXSQLZ .link,
+.cid-urbPAXSQLZ .link-icon {
+  color: #000000;
+}
+.cid-urbPAXSQLZ .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-urbPAXSQLZ .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
